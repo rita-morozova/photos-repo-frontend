@@ -57,3 +57,5 @@ Ruby on Rails & React
 * Search function from an image (search for similar images)
 * Users can create collections and add photos to collections
 * Add more tests
+
+#### Created By _**Margarita Morozova**_
