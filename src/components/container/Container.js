@@ -6,13 +6,14 @@ import PhotoModal from "../photo/PhotoModal";
 
 import "./container.css";
 
-const URL = "http://localhost:3000/";
+const URL = "https://photos-repo.herokuapp.com/";
 
 const Container = ({ user }) => {
   const [photos, setPhotos] = useState([]);
-
+ 
   useEffect(() => {
     getPhotos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getPhotos = () => {
@@ -41,7 +42,7 @@ const Container = ({ user }) => {
   };
 
   const deletePhoto = (photo) => {
-    fetch(`http://localhost:3000//photos/${photo.id}`, {
+    fetch(`https://photos-repo.herokuapp.com/photos/${photo.id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

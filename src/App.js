@@ -6,7 +6,7 @@ import MainHeader from "./components/header/MainHeader";
 import LoginForm from "./components/login/LoginForm";
 import SignupForm from "./components/signup/SignupForm";
 
-const URL = "http://localhost:3000/";
+const URL = "https://photos-repo.herokuapp.com/";
 const token = localStorage.getItem("token");
 
 const App = () => {
