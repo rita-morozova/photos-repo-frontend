@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# PHOTIFY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Photify is a photo repository.
 
-In the project directory, you can run:
+#### [Server-side Repository](https://github.com/rita-morozova/photosRepo-backend)
 
-### `yarn start`
+#### [The demo can be viewed on Netlify](https://fall-photify.netlify.app/) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started
+- Navigate to the [server-side-repo](https://github.com/rita-morozova/photosRepo-backend), fork and clone it.
+- cd to photosRepo-backend
+- Run `bundle install` to install all dependencies 
+- Run `rails db:create` & `rails db:migrate` to create a database
+- Run `rails db:seed` (to seed the database with the test photos) 
+- To be able to upload photos, you need to obtain a Cloudinary API key from [Cloudinary](https://cloudinary.com/) and save `'cloud_name'`, `'cloud_api_key'`, and `'cloud_api_secret'` in `application.yml` file (create `application.yml` in `config` folder manually). Also, add `secret_key: 'yourKeyHere' ` to the application.yml for `login authentication`
+- Start the server by running `rails s`
+- Once the server is running, fork and clone this repo. From the main directory run `npm install` to install all dependencies
+- Run `npm start` to start the application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## To Run Tests
+- Run `rspec --format documentation`
 
-### `yarn test`
+### Build with
+Ruby on Rails & React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tools
+* PostgreSQL
+* BCrypt
+* JSON Web Tokens
+* Cloudinary - a cloud-based image and video management service, is utilized to handle hosting of user generated images
+* Figaro - to secure the configuration of API keys
+* Semantic UI for fast and clean UI
 
-### `yarn build`
+### Main Features:
+* Users can see all photos
+* Users can add photos to the repository (secure uploading)
+* Users can delete photos from the repository: users can not delete photos from another user (access control)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 
+### Home Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Home Page](https://res.cloudinary.com/diexi8g0j/image/upload/v1632770433/1_jqemdj.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### User has to signup/login to upload photos
 
-### `yarn eject`
+![Signup](https://res.cloudinary.com/diexi8g0j/image/upload/v1632770428/2_mkcuap.png)
+![Upload Photos](https://res.cloudinary.com/diexi8g0j/image/upload/v1632770425/5_nkimhx.png)
+![Upload Photos](https://res.cloudinary.com/diexi8g0j/image/upload/v1632770420/3_ouu54j.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### User can delete photos (user is prevented from deleteing photos that belong to other users)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Delete Photos](https://res.cloudinary.com/diexi8g0j/image/upload/v1632770434/4_mxuqrw.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Features to implement:
+* Search function from an image (search for similar images)
+* Users can create collections and add photos to collections
+* Add more tests
