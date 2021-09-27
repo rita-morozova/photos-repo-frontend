@@ -35,6 +35,7 @@ Ruby on Rails & React
 
 ### Main Features:
 * Users can see all photos
+* User authentication
 * Users can add photos to the repository (secure uploading)
 * Users can delete photos from the repository: users can not delete photos from another user (access control)
 
